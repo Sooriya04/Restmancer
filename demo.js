@@ -42,8 +42,6 @@ function generateBlogPost(id = 1) {
   };
 }
 
-// Generate array of blog post objects
 const blogPosts = Array.from({ length: 10 }, (_, i) => generateBlogPost(i + 1));
 
-// Pretty-print the blog posts as JSON
 console.log(JSON.stringify(blogPosts, null, 2));
