@@ -1,19 +1,16 @@
 const { faker } = require("@faker-js/faker");
-const users = require("./users"); // assuming same directory
 
 // Function to generate a single blog post
 function generateBlogPost(id = 1) {
   const title = faker.lorem.sentence(6);
-  const author = faker.helpers.arrayElement(users); // pick one user
-
   return {
     id: `b${id.toString().padStart(3, "0")}`,
     title,
     slug: faker.helpers.slugify(title.toLowerCase()),
     author: {
-      id: author.id,
-      name: author.name,
-      email: author.email,
+      id: `u${faker.number.int({ min: 1, max: 100 })}`,
+      name: faker.person.fullName(),
+      email: faker.internet.email(),
     },
     content: faker.lorem.paragraphs(5, "<p>\n</p>"),
     tags: faker.helpers.arrayElements(
@@ -48,5 +45,5 @@ function generateBlogPost(id = 1) {
 // Generate array of blog post objects
 const blogPosts = Array.from({ length: 10 }, (_, i) => generateBlogPost(i + 1));
 
-// Pretty-print
+// Pretty-print the blog posts as JSON
 console.log(JSON.stringify(blogPosts, null, 2));
