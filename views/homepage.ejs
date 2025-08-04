@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Restmancer API</title>
+    <title>Restmancer API - Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -39,53 +39,71 @@
         font-size: 0.9rem;
         text-align: center;
       }
+      code {
+        color: #facc15;
+        background: #1e293b;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
     </style>
   </head>
   <body>
     <div class="container py-4">
       <header class="text-center">
         <h1>🧙 Restmancer API</h1>
-        <p class="lead">Conjuring Fake REST APIs for Real Dev Work</p>
+        <p class="lead">Conjuring Fake REST APIs for Real Dev Work</p>
       </header>
 
       <section>
-        <h2> What is Restmancer?</h2>
+        <h2>📘 General Documentation</h2>
         <p>
-          Restmancer is a simple, mock REST API designed for testing, development,
-          and learning. It returns mock data for users, blogs, and to-do lists.
+          Restmancer is a free fake REST API for testing, prototyping, or learning
+          purposes. It provides realistic mock data for users and blogs with plans
+          to expand into more resources.
         </p>
+        <ul>
+          <li><strong>Supports only:</strong> <code>GET</code> requests</li>
+          <li><strong>Query Support:</strong> Limit and field </li>
+          <li><strong>Output:</strong> JSON-formatted mock data</li>
+          <li><strong>Use case:</strong> Frontend development, practice with fetch/Axios, sandbox testing</li>
+        </ul>
         <p>
-          All endpoints follow standard REST conventions and support querying,
-          filtering, and limiting.
+          All endpoints are available under the base path: 
+          <code>https://restmancer.dev/api</code>
         </p>
       </section>
 
       <section>
         <h2>🔗 Available Modules</h2>
         <ul class="list-unstyled">
-          <li><strong>👤 Users:</strong> <a href="/usersPages">View Documentation</a></li>
-          <li><strong>📝 Blogs:</strong> <a href="/blogs.html">Coming Soon</a></li>
-          <li><strong>✅ To-Do List:</strong> <a href="/todos.html">Coming Soon</a></li>
+          <li><strong>👤 Users:</strong> <a href="/documentation/users">View Documentation</a></li>
+          <li><strong>📝 Blogs:</strong> <a href="/documentation/blogs">View Documentation</a></li>
+          <li><strong>✅ To-Do List:</strong> <span class="text-warning">Coming Soon</span></li>
         </ul>
       </section>
 
       <section>
         <h2>🚀 Getting Started</h2>
-        <p>Make sure your server is running locally at <code>http://localhost:3000</code>.</p>
-        <p>You can access all endpoints via the <code>/api</code> prefix.</p>
+        <p>Base URL for all endpoints:</p>
+        <code>https://restmancer.dev/api</code>
+
+        <p class="mt-3">Example usage:</p>
         <ul>
-          <li><code>GET /api/users</code></li>
-          <li><code>GET /api/blogs</code> (coming soon)</li>
-          <li><code>GET /api/todos</code> (coming soon)</li>
+          <li><code>GET /api/users</code> – List all users</li>
+          <li><code>GET /api/blogs</code> – List all blog posts</li>
+          <li><code>GET /api/todos</code> – <span class="text-warning">Coming Soon</span></li>
+        </ul>
+
+        <p>Use query parameters for better control:</p>
+        <ul>
+          <li><code>?limit=5</code> – limit results</li>
+          <li><code>?field=name,email</code> – select specific fields</li>
         </ul>
       </section>
 
-      
       <footer>
-        <p>&copy; 2025 Restmancer | Built with ❤️ using Express + JSON</p>
+        <p>&copy; 2025 Restmancer | Built with Sooriya</p>
       </footer>
     </div>
-    <script>
-    </script>
   </body>
 </html>

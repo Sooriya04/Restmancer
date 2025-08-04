@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restmancer – Mock REST API for Devs</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    nav.navbar {
+      background-color: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(10px);
+    }
+
+    h1, h2, h3 {
+      color: #38bdf8;
+    }
+
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid rgba(30, 41, 59, 0.6);
+    }
+
+    .btn-primary {
+      background-color: #38bdf8;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #0ea5e9;
+    }
+
+    nav a {
+      color: #e2e8f0;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .card {
+      background-color: #1e293b;
+      color: #e2e8f0;
+      border: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+    }
+
+    footer {
+      padding: 20px 0;
+      text-align: center;
+      color: #94a3b8;
+      background-color: rgba(15, 23, 42, 0.8);
+      border-top: 1px solid rgba(30, 41, 59, 0.6);
+    }
+
+    .form-control:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 0.2rem rgba(56, 189, 248, 0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">🧙 Restmancer</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#why">Why Restmancer</a></li>
+          <li class="nav-item"><a class="nav-link" href="#creator">Creator</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Restmancer</h1>
+      <p class="lead">Conjuring Fake REST APIs for Real Dev Work</p>
+      <a href="#features" class="btn btn-primary mt-3 me-2">Explore Features</a>
+      <a href="/documentation" class="btn btn-outline-light mt-3">Documentation</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>🔮 About Restmancer</h2>
+      <p>
+        Restmancer is a developer-focused platform designed to simulate realistic REST APIs using random, yet meaningful, data.
+        It offers endpoints for users, blogs, and to-do lists—ideal for testing front-end apps, rapid prototyping, or learning REST API integration.
+      </p>
+      <p>
+        Without the hassle of signups or tokens, Restmancer is perfect for students, UI/UX designers, and developers who need mock data for testing.
+        Powered by <strong>Node.js</strong>, <strong>Express</strong>, and <strong>Faker.js</strong>, it’s open and lightweight.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="Services">
+    <div class="container">
+      <h2>✨ Services</h2>
+      <div class="row mt-4">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center p-3">
+            <i class="fas fa-users fa-2x mb-2"></i>
+            <h5>Fake Users</h5>
+            <p>Get profiles with name, email, roles, skills & locations.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center p-3">
+            <i class="fas fa-blog fa-2x mb-2"></i>
+            <h5>Blog Posts</h5>
+            <p>Generate blogs with title, content, author, and tags.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center p-3">
+            <i class="fas fa-tasks fa-2x mb-2"></i>
+            <h5>To-Do Lists</h5>
+            <p>Create and test task apps with simple mock todos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Restmancer Section -->
+  <section id="why">
+    <div class="container">
+      <h2>🤔 Why Choose Restmancer?</h2>
+      <p>
+        Restmancer strips away complexity and offers exactly what developers need—functional mock APIs without overhead.
+        It’s built for speed, convenience, and flexibility.
+      </p>
+      <ul>
+        <li>🚫 No tokens, no API keys, no signups</li>
+        <li>✅ Sample documentation provided</li>
+        <li>⚡ Instant API responses</li>
+        <li>🧪 Great for testing, demos, and learning</li>
+        <li>📁 Fully customizable data generation</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- About the Creator -->
+  <!-- About the Creator Section -->
+<section id="creator">
+  <div class="container">
+    <h2 class="text-info mb-4">👨‍💻 About the Creator</h2>
+    <p>
+      Hi, I'm <strong>Sooriya</strong> — a B.Tech IT student passionate about technology, design, and full-stack development. 
+      I enjoy crafting intuitive, user-centric designs and building dynamic, responsive web applications. 
+      My work blends the elegance of UI/UX design with the power of modern backend technologies.
+    </p>
+    <p>
+      I’m continuously exploring innovative ways to solve problems, deliver meaningful experiences, 
+      and merge design with functionality to create impactful digital products.
+    </p>
+    <div class="mt-4">
+      <h5 class="text-info">Connect with me:</h5>
+      <ul class="list-unstyled d-flex gap-4 fs-5 mt-3">
+        <li>
+          <a href="mailto:sooriya@example.com" class="text-decoration-none text-light">
+            <i class="bi bi-envelope-fill me-2 text-info"></i>Email
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/sooriyadev" target="_blank" class="text-decoration-none text-light">
+            <i class="bi bi-github me-2 text-info"></i>GitHub
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/sooriya" target="_blank" class="text-decoration-none text-light">
+            <i class="bi bi-linkedin me-2 text-info"></i>LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+<section id="contact" >
+  <div class="container">
+    <h2 class="text-info mb-4">📬 Contact Us</h2>
+    <div class="row align-items-start">
+      
+      <!-- Contact Form -->
+      <div class="col-md-6">
+        <p>Have feedback or want to collaborate? Drop us a message below:</p>
+        <form>
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              rows="4"
+              placeholder="Your message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-info text-dark">
+            <i class="bi bi-send-fill me-1"></i>Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info & Socials -->
+      <div class="col-md-6 mt-4 mt-md-0">
+        <p>
+          We're always open to partnerships, feedback, and ideas! Whether you're
+          a developer, student, or startup — let's connect and create something meaningful.
+        </p>
+        <p>
+          📧 <strong>Email:</strong>
+          <a href="mailto:team@restmancer.dev" class="text-info text-decoration-none">
+            team@restmancer.dev
+          </a>
+        </p>
+        <p>
+          🌍 <strong>Website:</strong>
+          <a href="https://restmancer.dev" class="text-info text-decoration-none" target="_blank">
+            restmancer.dev
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      &copy; 2025 Restmancer. Built with ❤️ by Sooriya.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

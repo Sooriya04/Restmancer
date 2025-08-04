@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>🧙‍♂️ Restmancer API – Users</title>
+    <title>🧙‍♂️ Restmancer API – Blogs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -26,35 +26,26 @@
       a {
         color: #60a5fa;
       }
-      h1 {
-        color: #38bdf8;
-        margin-bottom: 1rem;
-      }
-
       .tabs {
         background: #1e293b;
         border-radius: 0.5rem;
         padding: 1rem;
       }
-
       .nav-tabs {
         border: none;
         margin-bottom: 1rem;
       }
-
       .nav-tabs .nav-link {
         color: #cbd5e1;
         border: none;
         border-radius: 0;
         background-color: transparent;
       }
-
       .nav-tabs .nav-link.active {
         background-color: #0f172a;
         color: #38bdf8;
         border-bottom: 2px solid #38bdf8;
       }
-
       pre {
         background-color: #0f172a;
         border-radius: 0.5rem;
@@ -65,7 +56,6 @@
         position: relative;
         margin-bottom: 0;
       }
-
       .copy-btn {
         position: absolute;
         top: 0.75rem;
@@ -79,67 +69,39 @@
         cursor: pointer;
         transition: background 0.2s ease-in-out;
       }
-
       .copy-btn:hover {
         background: #475569;
       }
-
       .info-box {
         background: #1e293b;
         padding: 1rem;
         border-radius: 0.5rem;
         margin-bottom: 2rem;
       }
-
-      code {
-        background: #334155;
-        padding: 0.2rem 0.4rem;
-        border-radius: 0.3rem;
-        font-size: 0.95rem;
-        color: #facc15;
-      }
-
     </style>
   </head>
   <body>
     <div class="container">
-      <p>
+      <h1 class="mb-4">🧙‍♂️ Restmancer API – Blog Endpoints</h1>
+        <p>
         <a href="/" class="btn btn-outline-info btn-sm mb-4">🔙 Back to Homepage</a>
-      </p>
-      <h1 class="mb-4">🧙‍♂️ Restmancer API – User Endpoints</h1>
-
-      <p>This page documents the available REST endpoints for fetching user data from the Restmancer API.</p>
+        </p>
+      <p>This page documents the available REST endpoints for fetching blog post data from the Restmancer API.</p>
 
       <hr />
 
-      <h2>GET <code>/api/users</code></h2>
-      <p>Returns a list of all users.</p>
+      <h2>GET <code>/api/blogs</code></h2>
+      <p>Returns a list of blog posts. If the <code>limit</code> is greater than initial data length (10), more will be generated on the fly.</p>
       <h5>Optional Query Parameters:</h5>
       <ul>
-        <li><code>limit</code> – Number of users to return.</li>
+        <li><code>limit</code> – Number of blogs to return.</li>
+        <li><code>field</code> – Comma-separated list of fields (e.g., <code>title,content</code>).</li>
       </ul>
       <h6>Examples:</h6>
       <ul>
-        <li><a href="/api/users" target="_blank">/api/users</a></li>
-        <li><a href="/api/users?limit=3" target="_blank">/api/users?limit=3</a></li>
-      </ul>
-
-      <hr />
-
-      <h2>GET <code>/api/users/custom</code></h2>
-      <p>Returns only specific fields of users, optionally with a limit.</p>
-      <h5>Required Query Parameters:</h5>
-      <ul>
-        <li><code>field</code> – Comma-separated list of fields (e.g., <code>name,email</code>).</li>
-      </ul>
-      <h5>Optional:</h5>
-      <ul>
-        <li><code>limit</code> – Limit number of users to return.</li>
-      </ul>
-      <h6>Examples:</h6>
-      <ul>
-        <li><a href="/api/users/custom?field=name,email" target="_blank">/api/users/custom?field=name,email</a></li>
-        <li><a href="/api/users/custom?field=name,email&limit=2" target="_blank">/api/users/custom?field=name,email&limit=2</a></li>
+        <li><a href="/api/blogs" target="_blank">/api/blogs</a></li>
+        <li><a href="/api/blogs?limit=5" target="_blank">/api/blogs?limit=5</a></li>
+        <li><a href="/api/blogs?field=title,slug&limit=3" target="_blank">/api/blogs?field=title,slug&limit=3</a></li>
       </ul>
 
       <hr />
@@ -147,24 +109,22 @@
       <h2>📂 Example Fields Available</h2>
       <ul>
         <li><code>id</code></li>
-        <li><code>name</code></li>
-        <li><code>username</code></li>
-        <li><code>email</code></li>
-        <li><code>password</code></li>
-        <li><code>role</code></li>
-        <li><code>location</code></li>
-        <li><code>skills</code></li>
+        <li><code>title</code></li>
+        <li><code>slug</code></li>
+        <li><code>author</code> (object with <code>id</code>, <code>name</code>, <code>email</code>)</li>
+        <li><code>content</code></li>
+        <li><code>tags</code></li>
+        <li><code>createAt</code></li>
+        <li><code>likes</code></li>
+        <li><code>comments</code> (array of objects with <code>id</code>, <code>author</code>, <code>content</code>, <code>postedAt</code>)</li>
       </ul>
-          <div class="container">
-      <h1>📘 Restmancer – Users API</h1>
 
       <div class="info-box">
         <p>
-          The <code>/api/users</code> endpoint supports custom field filtering
-          and limiting results. Use the <code>?field=name,email</code> and
-          <code>&limit=2</code> query parameters to customize your output.
+          You can control the number of blogs returned and which fields are included using
+          query parameters like <code>?limit=3</code> and <code>?field=title,slug</code>.
         </p>
-        <p>Example: <code>GET /api/users?field=name,email&limit=2</code></p>
+        <p>Example: <code>GET /api/blogs?field=title,slug&limit=3</code></p>
       </div>
 
       <div class="tabs">
@@ -187,13 +147,13 @@
           <div class="tab-pane fade show active" id="python" role="tabpanel">
             <pre><button class="copy-btn" onclick="copyCode(this)">Copy</button><code>import requests
 
-url = "http://localhost:8070/api/users"
+url = "http://localhost:8070/api/blogs?limit=3"
 response = requests.get(url)
 print(response.json())</code></pre>
           </div>
 
           <div class="tab-pane fade" id="js" role="tabpanel">
-            <pre><button class="copy-btn" onclick="copyCode(this)">Copy</button><code>fetch("http://localhost:8070/api/users?field=name,email&limit=2")
+            <pre><button class="copy-btn" onclick="copyCode(this)">Copy</button><code>fetch("http://localhost:8070/api/blogs?field=title,slug&limit=2")
   .then(res => res.json())
   .then(data => console.log(data));</code></pre>
           </div>
@@ -201,7 +161,7 @@ print(response.json())</code></pre>
           <div class="tab-pane fade" id="node" role="tabpanel">
             <pre><button class="copy-btn" onclick="copyCode(this)">Copy</button><code>const axios = require("axios");
 
-axios.get("http://localhost:8070/api/users")
+axios.get("http://localhost:8070/api/blogs")
   .then(response => {
     console.log(response.data);
   })
@@ -211,17 +171,17 @@ axios.get("http://localhost:8070/api/users")
           </div>
 
           <div class="tab-pane fade" id="curl" role="tabpanel">
-            <pre><button class="copy-btn" onclick="copyCode(this)">Copy</button><code>curl "http://localhost:8070/api/users"</code></pre>
+            <pre><button class="copy-btn" onclick="copyCode(this)">Copy</button><code>curl "http://localhost:8070/api/blogs?field=title,slug&limit=3"</code></pre>
           </div>
         </div>
       </div>
-    </div>
+
       <hr />
       <footer class="mt-4">
         <p class="">© 2025 Restmancer API</p>
       </footer>
     </div>
-  </body>
+
     <script>
       function copyCode(btn) {
         const code = btn.nextElementSibling.innerText;
@@ -231,6 +191,6 @@ axios.get("http://localhost:8070/api/users")
         });
       }
     </script>
-  
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
