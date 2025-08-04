@@ -1,4 +1,4 @@
-const userData = require("../mockup/user");
+const userData = require("../api/user");
 
 exports.getUsers = async (req, res) => {
   const limit = parseInt(req.query.limit);
